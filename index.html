@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mohammad Tauqeer — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#e9eef7;--surface:#eef3fb;--shadow-light:rgba(255,255,255,0.9);--shadow-dark:rgba(163,177,198,0.35);
+      --accent:#6b8cff;--muted:#6b7280;--card-radius:16px;
+      font-family:'Inter',system-ui,Arial,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#0f1724;line-height:1.5;padding:40px 24px;}
+    .container{max-width:1100px;margin:0 auto;animation:fadeIn 1s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    .neo{background:var(--surface);border-radius:var(--card-radius);box-shadow:14px 14px 28px var(--shadow-dark),-14px -14px 28px var(--shadow-light);transition:all .3s ease;}
+    .neo:hover{transform:translateY(-6px);box-shadow:8px 8px 20px var(--shadow-dark),-8px -8px 20px var(--shadow-light)}
+    .soft-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(180deg,#f8fbff,#eef6ff);box-shadow:6px 6px 12px rgba(150,170,200,0.25),-6px -6px 12px rgba(255,255,255,0.8);font-weight:600;transition:all .3s ease}
+    .soft-btn:hover{background:var(--accent);color:#fff;transform:scale(1.05)}
+
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:12px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-weight:800;color:var(--accent);font-size:20px;animation:float 4s ease-in-out infinite alternate}
+    @keyframes float{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+    .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .nav a{color:var(--muted);text-decoration:none;font-weight:600;transition:.3s}
+    .nav a:hover{color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:60px}
+    .hero-left h1{font-size:34px;margin:0 0 10px;}
+    .hero-left h1 span{color:var(--accent);}
+    .tag{color:var(--muted);margin-bottom:18px;min-height:30px;}
+    .cta{display:flex;gap:12px;}
+    .portrait{width:100%;height:360px;border-radius:18px;overflow:hidden;}
+    .portrait img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .portrait:hover img{transform:scale(1.05)}
+
+    .section-title{text-align:center;font-size:28px;font-weight:800;margin-bottom:24px;color:#1e293b;}
+
+    .about{margin-bottom:60px;text-align:center}
+    .skills{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:18px}
+    .skill-pill{padding:10px 14px;border-radius:999px;font-weight:600;background:linear-gradient(180deg,#f7f9ff,#eef6ff);box-shadow:6px 6px 12px rgba(150,170,200,0.12),-6px -6px 12px rgba(255,255,255,0.8);transition:.3s}
+    .skill-pill:hover{transform:translateY(-3px);background:var(--accent);color:#fff}
+
+    .services{margin-bottom:60px}
+    .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+    .service-card{padding:20px;text-align:center}
+
+    .gallery{margin-bottom:60px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+    .project{height:220px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:.3s;}
+    .project img{width:100%;height:100%;object-fit:cover;transition:.5s ease;}
+    .project:hover img{transform:scale(1.1)}
+    .project .meta{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,0.85);padding:8px 12px;border-radius:10px;font-weight:700;}
+
+    .testimonials{margin-bottom:60px}
+    .testimonial-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .quote{padding:18px;text-align:center;transition:.3s}
+    .quote:hover{transform:translateY(-6px)}
+
+    .contact{text-align:center;margin-bottom:60px}
+    .contact-info{margin-top:18px;font-size:16px}
+    .contact a{text-decoration:none;color:var(--accent);font-weight:600;}
+    footer{text-align:center;color:var(--muted);margin-top:30px}
+
+    @media(max-width:980px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand"><div class="logo neo">MT</div><strong>Mohammad Tauqeer</strong></div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">My Works</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hi, I'm <span>Mohammad Tauqeer</span></h1>
+        <div class="tag" id="typed-text"></div>
+        <div class="cta">
+          <button class="soft-btn">Download CV</button>
+          <button class="soft-btn">Hire Me</button>
+        </div>
+      </div>
+      <div class="portrait neo">
+        <img src="img.png" alt="Mohammad Tauqeer">
+      </div>
+    </section>
+
+    <section id="about" class="about neo">
+      <h2 class="section-title">About Me</h2>
+      <p>I'm a passionate Graphic Designer specializing in logo design, branding, UI/UX, and video editing. I love turning ideas into visually compelling stories that connect with audiences. My focus is on crafting creative, impactful visuals that help brands grow.</p>
+      <div class="skills">
+        <div class="skill-pill">Logo Design</div>
+        <div class="skill-pill">Branding</div>
+        <div class="skill-pill">Social Media Design</div>
+        <div class="skill-pill">UI/UX</div>
+        <div class="skill-pill">Video Editing</div>
+        <div class="skill-pill">Illustration</div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2 class="section-title">Services</h2>
+      <div class="service-list">
+        <div class="service-card neo"><h3>Logo Design</h3></div>
+        <div class="service-card neo"><h3>Branding Design</h3></div>
+        <div class="service-card neo"><h3>Social Media Graphics</h3></div>
+        <div class="service-card neo"><h3>UI/UX Design</h3></div>
+        <div class="service-card neo"><h3>Motion Graphics</h3></div>
+        <div class="service-card neo"><h3>Video Editing</h3></div>
+        <div class="service-card neo"><h3>Illustration</h3></div>
+        <div class="service-card neo"><h3>Packaging Design</h3></div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="gallery">
+      <h2 class="section-title">My Works</h2>
+      <div class="projects-grid">
+        <div class="project neo"><img src="pro (10).webp" alt="Project 01"><div class="meta">Project 01</div></div>
+        <div class="project neo"><img src="pro (11).webp" alt="Project 02"><div class="meta">Project 02</div></div>
+        <div class="project neo"><img src="pro (12).webp" alt="Project 03"><div class="meta">Project 03</div></div>
+        <div class="project neo"><img src="pro (4).webp" alt="Project 04"><div class="meta">Project 04</div></div>
+        <div class="project neo"><img src="pro (6).webp" alt="Project 05"><div class="meta">Project 05</div></div>
+        <div class="project neo"><img src="pro (8).webp" alt="Project 06"><div class="meta">Project 06</div></div>
+        <div class="project neo"><img src="pro (9).webp" alt="Project 07"><div class="meta">Project 07</div></div>
+        <div class="project neo"><img src="pro (1).webp" alt="Project 08"><div class="meta">Project 08</div></div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <h2 class="section-title">What Clients Say</h2>
+      <div class="testimonial-cards">
+        <div class="quote neo">“Outstanding creativity and on-time delivery. Truly impressive!”</div>
+        <div class="quote neo">“He transformed our brand visuals completely — love his style!”</div>
+        <div class="quote neo">“Professional, responsive, and a great collaborator!”</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact neo">
+      <h2 class="section-title">Let's Collaborate</h2>
+      <p>I’d love to collaborate with you on your next creative project or future brand vision. Let’s build something amazing together!</p>
+      <div class="contact-info">
+        <p>📧 Email: <a href="mailto:mtauqeerkhan08@gmail.com">mtauqeerkhan08@gmail.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/+923442796692">+92344 2796 692</a></p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Mohammad Tauqeer — All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const textArray = ["Graphic Designer.", "Branding Specialist.", "Logo Creator.", "UI/UX Designer.", "Video Editor."];
+    let index = 0, charIndex = 0, currentText = '', isDeleting = false;
+    function type() {
+      const typedText = document.getElementById('typed-text');
+      if (index >= textArray.length) index = 0;
+      currentText = textArray[index];
+      typedText.textContent = isDeleting
+        ? currentText.substring(0, charIndex--)
+        : currentText.substring(0, charIndex++);
+      if (!isDeleting && charIndex === currentText.length + 1) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index++;
+        setTimeout(type, 200);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
